@@ -1781,23 +1781,13 @@ margin: 0rem !important;
           pauseOnMouseEnter: false,
           reverseDirection: true,
         },
-        slidesPerView: 1.9,
+        slidesPerView: "auto",
         spaceBetween: 8,
         centeredSlides: false,
-        allowTouchMove: false,
-        grabCursor: false,
+        allowTouchMove: true,
+        grabCursor: true,
         freeMode: {
           enabled: true,
-        },
-        on: {
-          touchEnd: function(swiper) {
-            if (swiper && swiper.autoplay) swiper.autoplay.start();
-          },
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3.2,
-          },
         },
       });
 
