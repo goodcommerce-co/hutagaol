@@ -1,5 +1,7 @@
 @extends('_layouts.master')
 
+@section('page_title', 'Testimonials')
+
 @section('content')
     <section class="section-3 testimonials-home-b-section">
         <div class="w-layout-blockcontainer main-container-5 w-clearfix w-container">

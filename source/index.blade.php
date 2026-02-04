@@ -1,5 +1,7 @@
 @extends('_layouts.master')
 
+@section('page_title', 'Homepage')
+
 @section('content')
     @include('_sections.home.hero')
     @include('_sections.home.intro')

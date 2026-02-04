@@ -7,7 +7,7 @@
 
     <link rel="canonical" href="{{ $page->getUrl() }}">
     <meta name="description" content="{{ $page->description }}">
-    <title>{{ $page->title }}</title>
+    <title>@yield('page_title', 'Homepage') | {{ $page->siteTitle }}</title>
 
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
