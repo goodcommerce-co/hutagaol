@@ -17,6 +17,10 @@
     }
 }
 
+.card-offerings {
+    justify-content: flex-start;
+}
+
 /* Swiper marquee */
 .marquee-swiper {
     width: 100%;
