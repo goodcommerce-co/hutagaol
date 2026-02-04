@@ -11,6 +11,12 @@
     }
 }
 
+@media screen and (max-width: 767px) {
+    .card-offerings {
+        min-height: auto;
+    }
+}
+
 /* Swiper marquee */
 .marquee-swiper {
     width: 100%;
