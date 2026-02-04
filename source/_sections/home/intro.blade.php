@@ -4,11 +4,9 @@
             <div class="headline-home-a"></div>
         </div>
         <div class="master-home-a-video">
-            <div tr-scrollflip-element="origin" class="video-wrap-home-a"><img
-                        src="/assets/images/CHP-Photosession-036-1.webp"
-                        loading="lazy" sizes="100vw"
-                        srcset="/assets/images/CHP-Photosession-036-1-p-500.webp 500w, /assets/images/CHP-Photosession-036-1-p-800.webp 800w, /assets/images/CHP-Photosession-036-1-p-1080.webp 1080w, /assets/images/CHP-Photosession-036-1-p-1600.webp 1600w, /assets/images/CHP-Photosession-036-1.webp 1739w"
-                        alt="" class="image-3"></div>
+            <div tr-scrollflip-element="origin" class="video-wrap-home-a">
+                <div style="background-image:url(/assets/images/CHP-Photosession-036-1.webp);background-size:cover;background-position:top left;width:100%;height:100%"></div>
+            </div>
         </div>
         <div class="w-layout-blockcontainer main-container w-container">
             <div class="home-a-bottom-tile">
