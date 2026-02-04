@@ -8,7 +8,7 @@
                 <div animate="title" data-w-id="3bd8684c-b56f-7a89-de38-8f4c611035b4"
                      style="opacity:0;filter:blur(20px)" class="text-h2">What they say about me...
                 </div>
-                <a href="testimonial.html" class="cta-main bg-2 w-inline-block">
+                <a href="/testimonials" class="cta-main bg-2 w-inline-block">
                     <div button-text="" class="button-text-mask">
                         <div class="button-text _1">View all testimonial</div>
                         <div class="button-text _2">View all testimonial</div>
