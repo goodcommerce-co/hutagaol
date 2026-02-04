@@ -5,6 +5,10 @@
         object-fit: cover;
         object-position: left;
     }
+
+    .text-dark-88 {
+        width: auto;
+    }
 }
 
 /* Swiper marquee */
