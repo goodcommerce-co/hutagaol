@@ -3,7 +3,7 @@
 return [
     'production' => false,
     'baseUrl' => '',
-    'title' => 'Jigsaw',
-    'description' => 'Website description.',
+    'title' => 'Hutagaol',
+    'description' => 'Official profile of Stephan Hutagaol, an experienced lawyer with over 20 years of practice, international exposure, and global legal connections.',
     'collections' => [],
 ];

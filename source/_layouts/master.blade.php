@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html data-wf-page="6943b6d0b4b15149a8ae8550" data-wf-site="6943b6cfb4b15149a8ae84e5"
+      lang="{{ $page->language ?? 'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link rel="canonical" href="{{ $page->getUrl() }}">
+    <meta name="description" content="{{ $page->description }}">
+    <title>{{ $page->title }}</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      WebFont.load({google: {families: ['Merriweather:300,300italic,400,400italic,700,700italic,900,900italic']}});
+    </script>
+    <script type="text/javascript">
+      !function(o, c) {
+        var n = c.documentElement, t = ' w-mod-';
+        n.className += t + 'js', ('ontouchstart' in o || o.DocumentTouch && c instanceof DocumentTouch) &&
+        (n.className += t + 'touch');
+      }(window, document);
+    </script>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="Hutagaol"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+
+    @viteRefresh()
+    <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
+    <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6943b6cfb4b15149a8ae84e5"
+            type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.1.0/swiper-bundle.min.css">
+
+    <!--  Keep this css code to improve the font quality -->
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -o-font-smoothing: antialiased;
+        }
+
+        @media screen and (max-width: 479px) {
+            .image-3 {
+                object-fit: cover;
+                object-position: left;
+            }
+        }
+
+        /* Swiper marquee */
+        .marquee-swiper {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* This is the secret sauce for marquee smoothness */
+        .marquee-swiper .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        /* Auto-sized slides (width comes from content) */
+        .marquee-swiper .swiper-slide {
+            width: auto;
+            flex-shrink: 0;
+        }
+    </style>
+    <style>
+        /* Ensure all elements inherit the color from its parent */
+        a,
+        .w-input,
+        .w-select,
+        .w-tab-link,
+        .w-nav-link,
+        .w-nav-brand,
+        .w-dropdown-btn,
+        .w-dropdown-toggle,
+        .w-slider-arrow-left,
+        .w-slider-arrow-right,
+        .w-dropdown-link {
+            color: inherit;
+            text-decoration: inherit;
+            font-size: inherit;
+        }
+
+        /* Focus state style for keyboard navigation for the focusable elements */
+        *[tabindex]:focus-visible,
+        input[type="file"]:focus-visible {
+            outline: 0.125rem solid #4d65ff;
+            outline-offset: 0.125rem;
+        }
+
+        /* Get rid of top margin on first element in any rich text element */
+        .w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+            margin-top: 0 !important;
+        }
+
+        /* Get rid of bottom margin on last element in any rich text element */
+        .w-richtext > :last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Prevent all click and hover interaction with an element */
+        .pointer-events-off {
+            pointer-events: none;
+        }
+
+        /* Enables all click and hover interaction with an element */
+        .pointer-events-on {
+            pointer-events: auto;
+        }
+
+        /* Create a class of .div-square which maintains a 1:1 dimension of a div */
+        .div-square::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        /* Make sure containers never lose their center alignment */
+        .container-medium, .container-small, .container-large {
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+
+        /* Apply "..." after 3 lines of text */
+        .text-style-3lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Apply "..." after 2 lines of text */
+        .text-style-2lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Adds inline flex display */
+        .display-inlineflex {
+            display: inline-flex;
+        }
+
+        /* These classes are never overwritten */
+        .hide {
+            display: none !important;
+        }
+
+        /* Remove default Webflow chevron from form select */
+        select {
+            -webkit-appearance: none;
+        }
+
+        @media screen and (max-width: 991px) {
+            .hide, .hide-tablet {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .hide-mobile-landscape {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .hide-mobile {
+                display: none !important;
+            }
+        }
+
+        .margin-0 {
+            margin: 0rem !important;
+        }
+
+        .padding-0 {
+            padding: 0rem !important;
+        }
+
+        .spacing-clean {
+            padding: 0rem !important;
+            margin: 0rem !important;
+        }
+
+        .margin-top {
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-top {
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        .margin-right {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-right {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        .margin-bottom {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-bottom {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        .margin-left {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+        }
+
+        .padding-left {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+        }
+
+        .margin-horizontal {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+        }
+
+        .padding-horizontal {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+        }
+
+        .margin-vertical {
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-vertical {
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        /* Apply "..." at 100% width */
+        .truncate-width {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Removes native scrollbar */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        .color-scheme-1 {
+            /*All sections should point to Color Scheme 1*/
+        }
+
+        .color-scheme-2 {
+            --color-scheme-1--text: var(--color-scheme-2--text);
+            --color-scheme-1--background: var(--color-scheme-2--background);
+            --color-scheme-1--foreground: var(--color-scheme-2--foreground);
+            --color-scheme-1--border: var(--color-scheme-2--border);
+            --color-scheme-1--accent: var(--color-scheme-2--accent);
+        }
+
+        .color-scheme-3 {
+            --color-scheme-1--text: var(--color-scheme-3--text);
+            --color-scheme-1--background: var(--color-scheme-3--background);
+            --color-scheme-1--foreground: var(--color-scheme-3--foreground);
+            --color-scheme-1--border: var(--color-scheme-3--border);
+            --color-scheme-1--accent: var(--color-scheme-3--accent);
+        }
+
+        .color-scheme-4 {
+            --color-scheme-1--text: var(--color-scheme-4--text);
+            --color-scheme-1--background: var(--color-scheme-4--background);
+            --color-scheme-1--foreground: var(--color-scheme-4--foreground);
+            --color-scheme-1--border: var(--color-scheme-4--border);
+            --color-scheme-1--accent: var(--color-scheme-4--accent);
+        }
+
+        .color-scheme-5 {
+            --color-scheme-1--text: var(--color-scheme-5--text);
+            --color-scheme-1--background: var(--color-scheme-5--background);
+            --color-scheme-1--foreground: var(--color-scheme-5--foreground);
+            --color-scheme-1--border: var(--color-scheme-5--border);
+            --color-scheme-1--accent: var(--color-scheme-5--accent);
+        }
+
+        .color-scheme-6 {
+            --color-scheme-1--text: var(--color-scheme-6--text);
+            --color-scheme-1--background: var(--color-scheme-6--background);
+            --color-scheme-1--foreground: var(--color-scheme-6--foreground);
+            --color-scheme-1--border: var(--color-scheme-6--border);
+            --color-scheme-1--accent: var(--color-scheme-6--accent);
+        }
+
+        .color-scheme-7 {
+            --color-scheme-1--text: var(--color-scheme-7--text);
+            --color-scheme-1--background: var(--color-scheme-7--background);
+            --color-scheme-1--foreground: var(--color-scheme-7--foreground);
+            --color-scheme-1--border: var(--color-scheme-7--border);
+            --color-scheme-1--accent: var(--color-scheme-7--accent);
+        }
+
+        .color-scheme-8 {
+            --color-scheme-1--text: var(--color-scheme-8--text);
+            --color-scheme-1--background: var(--color-scheme-8--background);
+            --color-scheme-1--foreground: var(--color-scheme-8--foreground);
+            --color-scheme-1--border: var(--color-scheme-8--border);
+            --color-scheme-1--accent: var(--color-scheme-8--accent);
+        }
+
+        .color-scheme-9 {
+            --color-scheme-1--text: var(--color-scheme-9--text);
+            --color-scheme-1--background: var(--color-scheme-9--background);
+            --color-scheme-1--foreground: var(--color-scheme-9--foreground);
+            --color-scheme-1--border: var(--color-scheme-9--border);
+            --color-scheme-1--accent: var(--color-scheme-9--accent);
+        }
+
+        .color-scheme-10 {
+            --color-scheme-1--text: var(--color-scheme-10--text);
+            --color-scheme-1--background: var(--color-scheme-10--background);
+            --color-scheme-1--foreground: var(--color-scheme-10--foreground);
+            --color-scheme-1--border: var(--color-scheme-10--border);
+            --color-scheme-1--accent: var(--color-scheme-10--accent);
+        }
+
+        /* Inherit slider dot colors */
+        .w-slider-dot {
+            background-color: var(--color-scheme-1--text);
+            opacity: 0.20;
+        }
+
+        .w-slider-dot.w-active {
+            background-color: var(--color-scheme-1--text);
+            opacity: 1;
+        }
+
+        /* Override .w-slider-nav-invert styles */
+        .w-slider-nav-invert .w-slider-dot {
+            background-color: var(--color-scheme-1--text) !important;
+            opacity: 0.20 !important;
+        }
+
+        .w-slider-nav-invert .w-slider-dot.w-active {
+            background-color: var(--color-scheme-1--text) !important;
+            opacity: 1 !important;
+        }
+    </style>
+    <style>
+        /* Ensure all elements inherit the color from its parent */
+        a,
+        .w-input,
+        .w-select,
+        .w-tab-link,
+        .w-nav-link,
+        .w-nav-brand,
+        .w-dropdown-btn,
+        .w-dropdown-toggle,
+        .w-slider-arrow-left,
+        .w-slider-arrow-right,
+        .w-dropdown-link {
+            color: inherit;
+            text-decoration: inherit;
+            font-size: inherit;
+        }
+
+        /* Focus state style for keyboard navigation for the focusable elements */
+        *[tabindex]:focus-visible,
+        input[type="file"]:focus-visible {
+            outline: 0.125rem solid #4d65ff;
+            outline-offset: 0.125rem;
+        }
+
+        /* Get rid of top margin on first element in any rich text element */
+        .w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+            margin-top: 0 !important;
+        }
+
+        /* Get rid of bottom margin on last element in any rich text element */
+        .w-richtext > :last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Prevent all click and hover interaction with an element */
+        .pointer-events-off {
+            pointer-events: none;
+        }
+
+        /* Enables all click and hover interaction with an element */
+        .pointer-events-on {
+            pointer-events: auto;
+        }
+
+        /* Create a class of .div-square which maintains a 1:1 dimension of a div */
+        .div-square::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        /* Make sure containers never lose their center alignment */
+        .container-medium, .container-small, .container-large {
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+
+        /* Apply "..." after 3 lines of text */
+        .text-style-3lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Apply "..." after 2 lines of text */
+        .text-style-2lines {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Adds inline flex display */
+        .display-inlineflex {
+            display: inline-flex;
+        }
+
+        /* These classes are never overwritten */
+        .hide {
+            display: none !important;
+        }
+
+        /* Remove default Webflow chevron from form select */
+        select {
+            -webkit-appearance: none;
+        }
+
+        @media screen and (max-width: 991px) {
+            .hide, .hide-tablet {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .hide-mobile-landscape {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .hide-mobile {
+                display: none !important;
+            }
+        }
+
+        .margin-0 {
+            margin: 0rem !important;
+        }
+
+        .padding-0 {
+            padding: 0rem !important;
+        }
+
+        .spacing-clean {
+            padding: 0rem !important;
+            margin: 0rem !important;
+        }
+
+        .margin-top {
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-top {
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        .margin-right {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-right {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        .margin-bottom {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-bottom {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        .margin-left {
+            margin-top: 0rem !important;
+            margin-right: 0rem !important;
+            margin-bottom: 0rem !important;
+        }
+
+        .padding-left {
+            padding-top: 0rem !important;
+            padding-right: 0rem !important;
+            padding-bottom: 0rem !important;
+        }
+
+        .margin-horizontal {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+        }
+
+        .padding-horizontal {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+        }
+
+        .margin-vertical {
+            margin-right: 0rem !important;
+            margin-left: 0rem !important;
+        }
+
+        .padding-vertical {
+            padding-right: 0rem !important;
+            padding-left: 0rem !important;
+        }
+
+        /* Apply "..." at 100% width */
+        .truncate-width {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Removes native scrollbar */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="body">
+
+@yield('content')
+
+<section class="footer">
+    <div class="w-layout-blockcontainer main-container-5 w-container">
+        <div class="w-layout-grid footer-halves">
+            <div id="w-node-c67e0ad9-6ba8-d04d-aa80-03cabf94ddfe-a8ae8550" class="left-footer">
+                <div class="wrap-column-footer">
+                    <div class="label-2 text-dark-48">Get In Touch</div>
+                    <div class="link-list-footer">
+                        <div class="w-layout-hflex flex-block">
+                            <div class="icon-instagram w-embed">
+                                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                     height="100%" fill="#151515" stroke-width="2" class="remixicon ">
+                                    <path d="M13.0281 2.00073C14.1535 2.00259 14.7238 2.00855 15.2166 2.02322L15.4107 2.02956C15.6349 2.03753 15.8561 2.04753 16.1228 2.06003C17.1869 2.1092 17.9128 2.27753 18.5503 2.52503C19.2094 2.7792 19.7661 3.12253 20.3219 3.67837C20.8769 4.2342 21.2203 4.79253 21.4753 5.45003C21.7219 6.0867 21.8903 6.81337 21.9403 7.87753C21.9522 8.1442 21.9618 8.3654 21.9697 8.58964L21.976 8.78373C21.9906 9.27647 21.9973 9.84686 21.9994 10.9723L22.0002 11.7179C22.0003 11.809 22.0003 11.903 22.0003 12L22.0002 12.2821L21.9996 13.0278C21.9977 14.1532 21.9918 14.7236 21.9771 15.2163L21.9707 15.4104C21.9628 15.6347 21.9528 15.8559 21.9403 16.1225C21.8911 17.1867 21.7219 17.9125 21.4753 18.55C21.2211 19.2092 20.8769 19.7659 20.3219 20.3217C19.7661 20.8767 19.2069 21.22 18.5503 21.475C17.9128 21.7217 17.1869 21.89 16.1228 21.94C15.8561 21.9519 15.6349 21.9616 15.4107 21.9694L15.2166 21.9757C14.7238 21.9904 14.1535 21.997 13.0281 21.9992L12.2824 22C12.1913 22 12.0973 22 12.0003 22L11.7182 22L10.9725 21.9993C9.8471 21.9975 9.27672 21.9915 8.78397 21.9768L8.58989 21.9705C8.36564 21.9625 8.14444 21.9525 7.87778 21.94C6.81361 21.8909 6.08861 21.7217 5.45028 21.475C4.79194 21.2209 4.23444 20.8767 3.67861 20.3217C3.12278 19.7659 2.78028 19.2067 2.52528 18.55C2.27778 17.9125 2.11028 17.1867 2.06028 16.1225C2.0484 15.8559 2.03871 15.6347 2.03086 15.4104L2.02457 15.2163C2.00994 14.7236 2.00327 14.1532 2.00111 13.0278L2.00098 10.9723C2.00284 9.84686 2.00879 9.27647 2.02346 8.78373L2.02981 8.58964C2.03778 8.3654 2.04778 8.1442 2.06028 7.87753C2.10944 6.81253 2.27778 6.08753 2.52528 5.45003C2.77944 4.7917 3.12278 4.2342 3.67861 3.67837C4.23444 3.12253 4.79278 2.78003 5.45028 2.52503C6.08778 2.27753 6.81278 2.11003 7.87778 2.06003C8.14444 2.04816 8.36564 2.03847 8.58989 2.03062L8.78397 2.02433C9.27672 2.00969 9.8471 2.00302 10.9725 2.00086L13.0281 2.00073ZM12.0003 7.00003C9.23738 7.00003 7.00028 9.23956 7.00028 12C7.00028 14.7629 9.23981 17 12.0003 17C14.7632 17 17.0003 14.7605 17.0003 12C17.0003 9.23713 14.7607 7.00003 12.0003 7.00003ZM12.0003 9.00003C13.6572 9.00003 15.0003 10.3427 15.0003 12C15.0003 13.6569 13.6576 15 12.0003 15C10.3434 15 9.00028 13.6574 9.00028 12C9.00028 10.3431 10.3429 9.00003 12.0003 9.00003ZM17.2503 5.50003C16.561 5.50003 16.0003 6.05994 16.0003 6.74918C16.0003 7.43843 16.5602 7.9992 17.2503 7.9992C17.9395 7.9992 18.5003 7.4393 18.5003 6.74918C18.5003 6.05994 17.9386 5.49917 17.2503 5.50003Z"></path>
+                                </svg>
+                            </div>
+                            <a href="https://www.instagram.com/stephanhutagaol/?hl=en" target="_blank"
+                               class="link-footer-large w-inline-block">
+                                <div class="text-footer-link">Instagram</div>
+                                <div class="text-footer-link _2">Instagram</div>
+                            </a>
+                        </div>
+                        <div class="w-layout-hflex flex-block-2">
+                            <div class="icon-linkedinbox w-embed">
+                                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                     height="100%" fill="#151515" stroke-width="2" class="remixicon ">
+                                    <path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path>
+                                </svg>
+                            </div>
+                            <a href="https://www.linkedin.com/in/stephan-hutagaol-sh-mkn-msi-cmed-cla-ccd-89599b2b/details/organizations/"
+                               target="_blank" class="link-footer-large w-inline-block">
+                                <div class="text-footer-link _1">LinkedIn</div>
+                                <div class="text-footer-link _2">LinkedIn</div>
+                            </a>
+                        </div>
+                        <div class="w-layout-hflex flex-block-3">
+                            <div class="icon-link w-embed">
+                                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                     height="100%" fill="#151515" stroke-width="2" class="remixicon ">
+                                    <path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path>
+                                </svg>
+                            </div>
+                            <a href="https://Linktr.ee/stephanhutagaol" target="_blank"
+                               class="link-footer-large w-inline-block">
+                                <div class="text-footer-link _1">Linktree</div>
+                                <div class="text-footer-link _2">Linktree</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="w-node-c67e0ad9-6ba8-d04d-aa80-03cabf94de4c-a8ae8550" class="right-footer">
+                <div class="w-layout-grid grid-footer-info">
+                    <div class="info-block-footer">
+                        <div class="label-2 text-dark-48">Address</div>
+                        <div>Based in Jakarta, Indonesia</div>
+                    </div>
+                    <img src="/assets/images/Ellipse-305.webp" loading="lazy"
+                         id="w-node-bab7daa2-4448-645a-0ae7-2dc67ab461b4-a8ae8550" alt="" class="image-4">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-tile">
+            <div class="left-bottom-footer">
+                <div class="footer-bottom-left">
+                    <div class="label-small text-dark-64">© <span id="copyright_year">2026</span> Hutagaol</div>
+                    <div class="label-small text-dark-64">·</div>
+                    <div class="label-small text-dark-64">
+                        Built by <a href="https://www.goodcommerce.co/" target="_blank">Nex Digital</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ vite('source/_assets/js/main.js') }}" type="text/javascript"></script>
+<script>
+  document.getElementById('copyright_year').textContent = new Date().getFullYear();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12.1.0/swiper-bundle.min.js"></script>
+<script>
+  (function() {
+    function initMarqueeSwiper() {
+      var el = document.querySelector('.marquee-swiper');
+      if (!el || typeof Swiper === 'undefined') return;
+
+      // Prevent double init (Webflow / page transitions can re-run scripts)
+      if (el.swiper) {
+        el.swiper.destroy(true, true);
+      }
+
+      new Swiper(el, {
+        loop: true,
+        speed: 8000,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+          reverseDirection: true
+        },
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        centeredSlides: false,
+        allowTouchMove: true,
+        grabCursor: true,
+        freeMode: {
+          enabled: true
+        }
+      });
+
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMarqueeSwiper);
+    } else {
+      initMarqueeSwiper();
+    }
+  })();
+</script>
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('.slider-testi2').unbind('mouseenter mouseleave');
+    });
+  });
+</script>
+</body>
+</html>
