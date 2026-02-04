@@ -2,5 +2,5 @@
 
 return [
     'production' => true,
-    'baseUrl' => 'https://www.hutagaol.id',
+    'baseUrl' => env('APP_URL', 'https://www.hutagaol.id'),
 ];

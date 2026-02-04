@@ -2,7 +2,7 @@
 
 return [
     'production' => false,
-    'baseUrl' => 'http://hutagaol.test',
+    'baseUrl' => env('APP_URL'),
     'siteTitle' => 'Stephan Hutagaol, SH., MKn., MSi., CMed.',
     'description' => 'Official profile of Stephan Hutagaol, an experienced lawyer with over 20 years of practice, international exposure, and global legal connections.',
     'collections' => [
@@ -14,7 +14,7 @@ return [
                     return [
                         'name' => $testimony->name,
                         'title'   => $testimony->title,
-                        'testimonial' => $testimony->testimonial,
+                        'testimonial' => $testimony->quote,
                     ];
                 });
             }
