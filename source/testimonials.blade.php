@@ -2,6 +2,24 @@
 
 @section('page_title', 'Testimonials')
 
+@push('after_scripts')
+    <style>
+        .masonry__item {
+            width: 30%;
+            margin: 16px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script>
+      $('.masonry').masonry({
+        // options
+        itemSelector: '.masonry__item',
+        percentPosition: true
+        // columnWidth: 200
+      });
+    </script>
+@endpush
+
 @section('content')
     <section class="section-3 testimonials-home-b-section">
         <div class="w-layout-blockcontainer main-container-5 w-clearfix w-container">
@@ -21,33 +39,32 @@
                      style="opacity:0;filter:blur(20px)" class="text-h2">What they say about me...
                 </div>
             </div>
-            <div class="columns w-row">
-                @foreach($testimonials->split(3) as $testimonyGroup)
-                    <div class="column{{ $loop->first ? '' : '-' . $loop->iteration }} w-col w-col-4">
-                        @foreach($testimonyGroup as $testimony)
-                            <div class="card-testimonial-home-b">
-                                <div class="author-wrap-home home-b">
-                                    <div class="avatar-testimonial-home-b">
-                                        <img loading="lazy"
-                                             src="/assets/images/front3.webp" alt=""
-                                             class="image-cover">
-                                    </div>
-                                    <div class="author-tile-testimonial">
-                                        <div class="text-bold">
-                                            {{ $testimony['name'] }}
-                                        </div>
-                                        <div>
-                                            {{ $testimony['title'] }}
-                                        </div>
-                                    </div>
+            <div class="masonry">
+                @foreach($testimonials as $testimony)
+                    <div class="masonry__item">
+                        <div class="card-testimonial-home-b">
+                            <div class="author-wrap-home home-b">
+                                <div class="avatar-testimonial-home-b">
+                                    <img loading="lazy"
+                                         src="/assets/images/front3.webp" alt=""
+                                         class="image-cover">
                                 </div>
-                                <div class="bottom-tile-testimonial-home-b">
+                                <div class="author-tile-testimonial">
+                                    <div class="text-bold">
+                                        {{ $testimony['name'] }}
+                                    </div>
                                     <div>
-                                        {!! nl2br($testimony['testimonial']) !!}
+                                        {{ $testimony['title'] }}
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                            <div class="bottom-tile-testimonial-home-b">
+                                <div>
+                                    {!! nl2br($testimony['testimonial']) !!}
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 @endforeach
             </div>
