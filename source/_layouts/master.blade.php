@@ -129,6 +129,7 @@
   document.getElementById('copyright_year').textContent = new Date().getFullYear();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12.1.0/swiper-bundle.min.js"></script>
+@stack('after_scripts')
 <script>
   (function() {
     function initMarqueeSwiper() {
