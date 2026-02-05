@@ -6,16 +6,33 @@
     <style>
         .masonry__item {
             width: 30%;
+            max-width: 30%;
             margin: 16px;
+            /*padding-right: 8px;*/
+            /*padding-left: 8px;*/
+            /*margin-bottom: 8px;*/
+            /*padding-bottom: 8px;*/
+        }
+
+        .card-testimonial-home-b {
+            /*padding: 16px;*/
+            /*margin-bottom: 8px;*/
+            /*padding-bottom: 8px;*/
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
     <script>
-      $('.masonry').masonry({
-        // options
-        itemSelector: '.masonry__item',
-        percentPosition: true
-        // columnWidth: 200
+      $(document).ready(function (){
+        $masonry = $('.masonry').masonry({
+          // options
+          itemSelector: '.masonry__item',
+          percentPosition: true,
+          horizontalOrder: true
+        });
+
+        setTimeout(function() {
+          $masonry.masonry();
+        }, 1000);
       });
     </script>
 @endpush
@@ -40,7 +57,7 @@
                 </div>
             </div>
             <div class="masonry">
-                @foreach($testimonials as $testimony)
+                @foreach($testimonials->sortBy('name') as $testimony)
                     <div class="masonry__item">
                         <div class="card-testimonial-home-b">
                             <div class="author-wrap-home home-b">
