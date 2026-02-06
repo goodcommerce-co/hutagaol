@@ -520,7 +520,6 @@
 @push('after_scripts')
     <style>
         .testimonial-swiper .card-testimonial-home-b {
-            max-width: 450px;
             margin-left: 8px;
             margin-right: 8px;
         }
@@ -532,10 +531,19 @@
           autoplay: {
             delay: 2000,
           },
-          slidesPerView: 3.2,
-          centeredSlides: false,
+          slidesPerView: 1.2,
+          centeredSlides: true,
           grabCursor: true,
-          spaceBetween: 8,
+          spaceBetween: 0,
+          breakpoints: {
+            768: {
+              slidesPerView: 2.5,
+              centeredSlides: false,
+            },
+            992: {
+              slidesPerView: 3.5,
+            }
+          }
         });
     </script>
 @endpush

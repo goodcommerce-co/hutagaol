@@ -1871,7 +1871,6 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@12.1.0/swiper-bundle.min.js"></script>
     <style>
         .testimonial-swiper .card-testimonial-home-b {
-            max-width: 450px;
             margin-left: 8px;
             margin-right: 8px;
         }
@@ -1883,10 +1882,19 @@
           autoplay: {
             delay: 2000,
           },
-          slidesPerView: 3.2,
-          centeredSlides: false,
+          slidesPerView: 1.2,
+          centeredSlides: true,
           grabCursor: true,
-          spaceBetween: 8,
+          spaceBetween: 0,
+          breakpoints: {
+            768: {
+              slidesPerView: 2.5,
+              centeredSlides: false,
+            },
+            992: {
+              slidesPerView: 3.5,
+            }
+          }
         });
     </script>
 <script>
