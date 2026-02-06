@@ -169,12 +169,5 @@
     }
   })();
 </script>
-<script>
-  $(document).ready(function() {
-    setTimeout(function() {
-      $('.slider-testi2').unbind('mouseenter mouseleave');
-    });
-  });
-</script>
 </body>
 </html>
