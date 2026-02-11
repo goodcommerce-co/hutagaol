@@ -5,13 +5,21 @@
 @push('after_scripts')
     <style>
         .masonry__item {
-            width: 30%;
-            max-width: 30%;
-            margin: 16px;
+            width: 100%;
+            max-width: 100%;
+            margin: 16px auto;
             /*padding-right: 8px;*/
             /*padding-left: 8px;*/
             /*margin-bottom: 8px;*/
             /*padding-bottom: 8px;*/
+        }
+
+        @media (min-width: 768px) {
+            .masonry__item {
+                width: 30%;
+                max-width: 30%;
+                margin: 16px;
+            }
         }
 
         .card-testimonial-home-b {
